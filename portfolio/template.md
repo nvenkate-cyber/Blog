@@ -14,7 +14,7 @@ Guanajuato, México. Guanajuato is also where I live!
 
 # Know me!
 
-## Things I'm passionate
+## Things I'm passionate about
 
  -  
  -  
@@ -38,6 +38,7 @@ Guanajuato, México. Guanajuato is also where I live!
 [//]: # (It can be a table like the next)
 
 | Skill   | time    | Project or show-off                                                            |
+| -       | -       | -                                                                              |
 | C++     | 4 years | [Expression templating](https://github.com/Suavesito-Olimpiada/BoostTest)      |
 | C       | 5 years | [Numerical methods](https://github.com/Suavesito-Olimpiada/NumericalMethods.c) |
 | Julia   | 3 years | [Discrete Exterior Calculus](https://github.com/Suavesito-Olimpiada/DEC2D.jl)  |
