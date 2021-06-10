@@ -12,7 +12,7 @@ Guanajuato, México. Guanajuato is also where I live!
 
 ---
 
-# Know me!
+# Get to know me!
 
 ## Things I'm passionate about
 
@@ -20,7 +20,7 @@ Guanajuato, México. Guanajuato is also where I live!
  -  
  -  
 
-## and hobbies!
+## My hobbies!
 
  -  
 
@@ -33,7 +33,7 @@ Guanajuato, México. Guanajuato is also where I live!
 
 # Do you need someone to work with?
 
-## These are my technical skill
+## My technical skills include...
 
 [//]: # (It can be a table like the next)
 
