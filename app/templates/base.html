@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +9,8 @@
 
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="{{ url_for('static', filename='./styles/styles.css') }}">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
         <title> {{ page_header}}</title>
     </head>
@@ -41,27 +44,16 @@
         <main class="l-main">
             <!--===== HOME =====-->
             <section class="home" id="home">
-                <div class="home__container bd-grid">
-                    <div class="home__img">
-                        
-                        <img src="{{url_for('static', filename='img/img1.png')}}" alt="" data-speed="-2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img3.png')}}" alt="" data-speed="2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img4.png')}}" alt="" data-speed="-2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img5.png')}}" alt="" data-speed="-2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img6.png')}}" alt="" data-speed="2" class="move"/>
-                    </div>
+                <div class="home__container">
+                    {% block member_img%} {% endblock %}
 
-                    <div class="home__data">
-                        <h1 class="home__title"> {{ title }} <br> {{title2}}</h1>
-                        <p class="home__description"> Hello! We are MLH fellows from pod 3.3.5 in the <br>Production Engineering track. 
-                        We are excited <br>to showcase our portfolios and show MLH what we <br> learned this week from developing in Flask. 
-                        </p>
-                        <a href="{{ url_for('team_profiles') }}" class="home__button">Meet us!</a>
-                    </div>
+                    {% block member_data %} {% endblock %}
                 </div>
             </section>
         </main>
-
+        <script>
+            AOS.init();
+          </script>
         <!--===== GSAP =====-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 

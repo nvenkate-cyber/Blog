@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block member_data%} 
+
+<div class="home__container bd-grid">
+
+<div class="home__data">
+    <h2 class="home__title"> Meet the batch 3 fellows! </h1>
+    
+    <a href="{{ url_for('index') }}" class="home__button">Reem</a>
+    <div style="height: 50px;"></div>
+    <a href="{{ url_for('index') }}" class="home__button">José</a>
+    <div style="height: 50px;"></div>
+    <a href="{{ url_for('index') }}" class="home__button">Nandini</a>
+</div>
+</div>
+{% endblock%}
