@@ -4,9 +4,7 @@
 
 # What do I do?
 
-I study computer science (major) with a focus on computational mathematics
-(minor) in the University of Guanajuato (Universidad de Guanajuato) in
-Guanajuato, México. Guanajuato is also where I live!
+I study computer science (major) with a focus on computational mathematics (minor) in the University of Guanajuato (Universidad de Guanajuato) in Guanajuato, México. Guanajuato is also where I live!
 
 [//]: # (Here is where we'll put the location)
 
