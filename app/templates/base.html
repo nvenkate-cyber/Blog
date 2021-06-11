@@ -4,18 +4,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
         <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='./styles/styles.css') }}">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        {% block head%} 
 
-        <title> {{ page_header}}</title>
+        {% endblock%}
+
+        <title> {{ page_header}} </title>
+        
     </head>
     <body>
-        <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
@@ -40,24 +37,6 @@
                 </div>
             </nav>
         </header>
-
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home" id="home">
-                <div class="home__container">
-                    {% block member_img%} {% endblock %}
-
-                    {% block member_data %} {% endblock %}
-                </div>
-            </section>
-        </main>
-        <script>
-            AOS.init();
-          </script>
-        <!--===== GSAP =====-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-
-        <!--===== MAIN JS =====-->
-        <script src="{{ url_for('static', filename='main.js') }}"></script>
+        {% block member_data %} {% endblock %}
     </body>
 </html>

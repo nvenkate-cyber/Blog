@@ -15,3 +15,7 @@ def index():
 @app.route('/team_profiles')
 def team_profiles():
     return render_template('team_profiles.html', page_header="Meet the team", top_page_title="MLH Orientation Week Hackathon Submission")
+
+@app.route('/temp')
+def temp():
+    return render_template('temp.html')
