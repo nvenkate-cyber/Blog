@@ -4,9 +4,7 @@
 
 # What do I do?
 
-I study Computer Science and Near Eastern Studies at Johns Hopkins University in Baltimore, Maryland. 
-My academic interests include quantum computing, computer vision, and mobile app/web development.
-I am currently living in Baltimore. :)
+I study Computer Science and Near Eastern Studies at Johns Hopkins University in Baltimore, Maryland. My academic interests include quantum computing, computer vision, and mobile app/web development. I am currently living in Baltimore. :)
 
 [//]: # (Here is where we'll put the location)
 

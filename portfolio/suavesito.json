@@ -1,0 +1,28 @@
+{
+    "name": "José Joaquín Zubieta Rico",
+    "what_i_do": "I study computer science (major) with a focus on computational mathematics (minor) in the University of Guanajuato (Universidad de Guanajuato) in Guanajuato, México. Guanajuato is also where I live!",
+    "know_me": {
+        "pasionate": [],
+        "hobbies": [],
+        "work": {
+            "skills": [
+                {
+                    "skill": "C++",
+                    "description": {
+                        "title": "Expression templating",
+                        "link": "https://github.com/Suavesito-Olimpiada/BoostTest"
+                    }
+                },
+                {
+                    "skill": "C",
+                    "description": "5 years"
+                }
+            ],
+            "contact": {
+                "email": "jose.zubieta@cimat.mx",
+                "github": "Suavesito-Olimpiada",
+                "linkedIn": "https://www.linkedin.com/in/jjzubietar/"
+            }
+        }
+    }
+}
