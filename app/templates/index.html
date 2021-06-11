@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='./styles/card_style.css') }}">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-    <title>{{ title }}</title>
-</head>
-
-<body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
+        <title> {{ page_header}}</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">{{ top_page_title }}</a>
                 </div>
-            </a>
-        </div>
-    </header>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
 
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
-        </div>
-        <h1>{{ title }}</h1>
-    </div>
-</body>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="{{ url_for('index') }}" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="{{ url_for('team_profiles') }}" class="nav__link">Team Profiles</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <div class="home__img">
+                        
+                        <img src="{{url_for('static', filename='img/img1.png')}}" alt="" data-speed="-2" class="move"/>
+                        <img src="{{url_for('static', filename='img/img3.png')}}" alt="" data-speed="2" class="move"/>
+                        <img src="{{url_for('static', filename='img/img4.png')}}" alt="" data-speed="-2" class="move"/>
+                        <img src="{{url_for('static', filename='img/img5.png')}}" alt="" data-speed="-2" class="move"/>
+                        <img src="{{url_for('static', filename='img/img6.png')}}" alt="" data-speed="2" class="move"/>
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title"> {{ title }} <br> {{title2}}</h1>
+                        <p class="home__description"> Hello! We are MLH fellows from pod 3.3.5 in the <br>Production Engineering track. 
+                        We are excited <br>to showcase our portfolios and show MLH what we <br> learned this week from developing in Flask. 
+                        </p>
+                        <a href="{{ url_for('team_profiles') }}" class="home__button">Meet us!</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--===== GSAP =====-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </body>
 </html>
