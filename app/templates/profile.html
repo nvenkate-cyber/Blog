@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Material Design for Bootstrap -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Local stylesheet -->
+    <!-- TODO: change this to templating with flask -->
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+
+    <title>R2T2</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-none">
+        <div class="container-fluid">
+            <a class="navbar_brand" href="#">
+                <div class="d-inline-flex ml-2">
+                    <p>{{ top_page_title }}</p>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-md-0">
+                    <li class="nav-item">
+                        <a href="{{ url_for('index') }}" class="nav-link active fw-fold">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('team_profiles') }}" class="nav-link active fw-fold">Team Profiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link active fw-fold">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link active fw-fold">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="one" class="vh-100">
+        <div class="container-md h-75">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center test-center">
+                    <div data-aos="zoom-in">
+                        <h1 class="text-center">Hi! I’m {{get_name()}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex align-items justify-content-center">
+            <div class="row d-flex justify-content-center test-center">
+                <a href="#two">
+                    <i class="fa fa-angle-double-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="two" class=vh-100>
+        <div class="container-md h-75">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center test-center">
+                    <h1 class="text-center" data-aos="zoom-in">What do I do?</h1>
+                    <p data-aos="fade-right">{{get_what_i_do()}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex align-items justify-content-center">
+            <div class="row d-flex justify-content-center test-center">
+                <a href="#three">
+                    <i class="fa fa-angle-double-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="three" class=vh-100>
+        <div class="container-md h-75">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center test-center">
+                    <h1 class="text-center">Know me!</h1>
+                    <h2 id="things-im-passionate-about">Things I’m passionate about</h2>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <h2 id="title-hobbies">and hobbies!</h2>
+                    <ul>
+                        <li></li>
+                    </ul>
+                    <figure>
+                        <img src="/to/image.jpg" alt="image1" />
+                        <figcaption aria-hidden="true">image1</figcaption>
+                    </figure>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex align-items justify-content-center">
+            <div class="row d-flex justify-content-center test-center">
+                <a href="#two">
+                    <i class="fa fa-angle-double-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h1 id="title-skills">Do you need someone to work with?</h1>
+
+    <h2 id="title-skills-2">These are my technical skill</h2>
+    <table>
+        <thead>
+            <tr class="header">
+                <th>Skill</th>
+                <th>time</th>
+                <th>Project or show-off</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+                <td>C++</td>
+                <td>4 years</td>
+                <td><a href="https://github.com/Suavesito-Olimpiada/BoostTest">Expression templating</a></td>
+            </tr>
+            <tr class="even">
+                <td>C</td>
+                <td>5 years</td>
+                <td><a href="https://github.com/Suavesito-Olimpiada/NumericalMethods.c">Numerical methods</a></td>
+            </tr>
+            <tr class="odd">
+                <td>Julia</td>
+                <td>3 years</td>
+                <td><a href="https://github.com/Suavesito-Olimpiada/DEC2D.jl">Discrete Exterior Calculus</a></td>
+            </tr>
+            <tr class="even">
+                <td>Linux</td>
+                <td>4 years</td>
+                <td>-</td>
+            </tr>
+            <tr class="odd">
+                <td>bash/sh</td>
+                <td>4 years</td>
+                <td><a href="https://github.com/Suavesito-Olimpiada/dotfiles">dotfiles</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>[C++] 4 years, have multiple projects including
+            <ul>
+                <li><a href="https://github.com/Suavesito-Olimpiada/BoostTest">Expression templating</a></li>
+            </ul>
+        </li>
+        <li>[C] 5 years…</li>
+    </ul>
+
+    <footer>
+        <h2 id="title-contact">and my contact information</h2>
+        <p>E-mail: <a href="mailto:jose.zubieta@cimat.mx">jose.zubieta@cimat.mx</a>
+            Github: <a href="https://github.com/Suavesito-Olimpiada">Suavesito-Olimpiada</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/jjzubietar/">José Zubieta</a></p>
+        <p><strong>Send me an e-mail</strong></p>
+    </footer>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
