@@ -17,13 +17,13 @@ def team_profiles():
     return render_template('team_profiles.html', page_header="Meet the team", top_page_title="MLH Orientation Week Hackathon Submission")
 
 @app.route('/reem')
-def temp():
+def reem():
     return render_template('reem.html')
 
 @app.route('/nandini')
-def temp():
+def nandini():
     return render_template('reem.html')
 
 @app.route('/jose')
-def temp():
+def jose():
     return render_template('reem.html')
