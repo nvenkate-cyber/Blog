@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='./styles/card_style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title> {{ page_header}}</title>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">{{ top_page_title }}</a>
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./styles/card_style.css') }}">
+
+    <title> {{ page_header}}</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">{{ top_page_title }}</a>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
                 </div>
-                
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="{{ url_for('index') }}" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="{{ url_for('team_profiles') }}" class="nav__link">Team Profiles</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+                <div class="home__img">
+
+                    <img src="{{url_for('static', filename='img/img1.png')}}" alt="" data-speed="-2" class="move" />
+                    <img src="{{url_for('static', filename='img/img3.png')}}" alt="" data-speed="2" class="move" />
+                    <img src="{{url_for('static', filename='img/img4.png')}}" alt="" data-speed="-2" class="move" />
+                    <img src="{{url_for('static', filename='img/img5.png')}}" alt="" data-speed="-2" class="move" />
+                    <img src="{{url_for('static', filename='img/img6.png')}}" alt="" data-speed="2" class="move" />
                 </div>
 
-                <div class="nav__menu" id="nav-menu">
-                    <div class="nav__close" id="nav-close">
-                        <i class='bx bx-x'></i>
-                    </div>
-
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="{{ url_for('index') }}" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="{{ url_for('team_profiles') }}" class="nav__link">Team Profiles</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
+                <div class="home__data">
+                    <h1 class="home__title"> {{ title }} <br> {{title2}}</h1>
+                    <p class="home__description"> Hello! We are MLH fellows from pod 3.3.5 in the <br>Production Engineering track.
+                        We are excited <br>to showcase our portfolios and show MLH what we <br> learned this week from developing in Flask.
+                    </p>
+                    <a href="{{ url_for('team_profiles') }}" class="home__button">Meet us!</a>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </section>
+    </main>
 
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home" id="home">
-                <div class="home__container bd-grid">
-                    <div class="home__img">
-                        
-                        <img src="{{url_for('static', filename='img/img1.png')}}" alt="" data-speed="-2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img3.png')}}" alt="" data-speed="2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img4.png')}}" alt="" data-speed="-2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img5.png')}}" alt="" data-speed="-2" class="move"/>
-                        <img src="{{url_for('static', filename='img/img6.png')}}" alt="" data-speed="2" class="move"/>
-                    </div>
+    <!--===== GSAP =====-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-                    <div class="home__data">
-                        <h1 class="home__title"> {{ title }} <br> {{title2}}</h1>
-                        <p class="home__description"> Hello! We are MLH fellows from pod 3.3.5 in the <br>Production Engineering track. 
-                        We are excited <br>to showcase our portfolios and show MLH what we <br> learned this week from developing in Flask. 
-                        </p>
-                        <a href="{{ url_for('team_profiles') }}" class="home__button">Meet us!</a>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <!--===== MAIN JS =====-->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
 
-        <!--===== GSAP =====-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-
-        <!--===== MAIN JS =====-->
-        <script src="{{ url_for('static', filename='main.js') }}"></script>
-    </body>
 </html>
