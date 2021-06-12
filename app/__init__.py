@@ -22,8 +22,8 @@ def reem():
 
 @app.route('/nandini')
 def nandini():
-    return render_template('reem.html')
+    return render_template('nandini.html')
 
 @app.route('/jose')
 def jose():
-    return render_template('reem.html')
+    return render_template('jose.html')
