@@ -15,9 +15,6 @@
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
     <!-- Animate on Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -30,38 +27,40 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light shadow-none">
-        <div class="container-fluid">
-            <a class="navbar_brand" href="#">
-                <div class="d-inline-flex ml-2">
-                    <p>{{ top_page_title }}</p>
+    <div class="container md-lg">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-none">
+            <div class="container-fluid">
+                <a class="navbar_brand" href="#">
+                    <div class="d-inline-flex ml-2">
+                        <p>{{ top_page_title }}</p>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-md-0">
+                        <li class="nav-item">
+                            <a href="{{ url_for('index') }}" class="nav-link active fw-fold">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url_for('team_profiles') }}" class="nav-link active fw-fold">Team Profiles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link active fw-fold">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link active fw-fold">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-md-0">
-                    <li class="nav-item">
-                        <a href="{{ url_for('index') }}" class="nav-link active fw-fold">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url_for('team_profiles') }}" class="nav-link active fw-fold">Team Profiles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link active fw-fold">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link active fw-fold">Contact</a>
-                    </li>
-                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
-    <div id="one" class="vh-100">
+    <div id="one" style="height: 800px">
         <div class="container-md h-75">
             <div class="container-fluid d-flex align-items-center justify-content-center h-100">
                 <div class="row d-flex justify-content-center test-center">
@@ -80,7 +79,7 @@
         </div>
     </div>
 
-    <div id="two" class=vh-100>
+    <div id="two" style="height: 800px">
         <div class="container-md h-75">
             <div class="container-fluid d-flex align-items-center justify-content-center h-100">
                 <div class="row d-flex justify-content-center test-center">
@@ -98,7 +97,7 @@
         </div>
     </div>
 
-    <div id="three" class=vh-100>
+    <div id="three" style="height: 800px">
         <div class="container-md h-75">
             <div class="container-fluid d-flex align-items-center justify-content-center h-100">
                 <div class="row d-flex justify-content-center test-center">
@@ -126,61 +125,39 @@
         </div>
         <div class="container-fluid d-flex align-items justify-content-center">
             <div class="row d-flex justify-content-center test-center">
-                <a href="#two">
+                <a href="#four">
                     <i class="fa fa-angle-double-down"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <h1 id="title-skills">Do you need someone to work with?</h1>
+    <div id="four" style="height: 800px">
+        <div class="container-md h-75">
+            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                <div class="row d-flex justify-content-center test-center">
+                    <h1 id="title-skills">Do you need someone to work with?</h1>
+                    <h2 id="title-skills-2">These are my technical skill</h2>
+                    <ul>
+                        <li>[C++] 4 years, have multiple projects including
+                            <ul>
+                                <li><a href="https://github.com/Suavesito-Olimpiada/BoostTest">Expression templating</a></li>
+                            </ul>
+                        </li>
+                        <li>[C] 5 years…</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex align-items justify-content-center">
+            <div class="row d-flex justify-content-center test-center">
+                <a href="#five">
+                    <i class="fa fa-angle-double-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <h2 id="title-skills-2">These are my technical skill</h2>
-    <table>
-        <thead>
-            <tr class="header">
-                <th>Skill</th>
-                <th>time</th>
-                <th>Project or show-off</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="odd">
-                <td>C++</td>
-                <td>4 years</td>
-                <td><a href="https://github.com/Suavesito-Olimpiada/BoostTest">Expression templating</a></td>
-            </tr>
-            <tr class="even">
-                <td>C</td>
-                <td>5 years</td>
-                <td><a href="https://github.com/Suavesito-Olimpiada/NumericalMethods.c">Numerical methods</a></td>
-            </tr>
-            <tr class="odd">
-                <td>Julia</td>
-                <td>3 years</td>
-                <td><a href="https://github.com/Suavesito-Olimpiada/DEC2D.jl">Discrete Exterior Calculus</a></td>
-            </tr>
-            <tr class="even">
-                <td>Linux</td>
-                <td>4 years</td>
-                <td>-</td>
-            </tr>
-            <tr class="odd">
-                <td>bash/sh</td>
-                <td>4 years</td>
-                <td><a href="https://github.com/Suavesito-Olimpiada/dotfiles">dotfiles</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>[C++] 4 years, have multiple projects including
-            <ul>
-                <li><a href="https://github.com/Suavesito-Olimpiada/BoostTest">Expression templating</a></li>
-            </ul>
-        </li>
-        <li>[C] 5 years…</li>
-    </ul>
 
     <footer>
         <h2 id="title-contact">and my contact information</h2>
