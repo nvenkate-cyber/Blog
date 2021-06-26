@@ -1,11 +1,13 @@
 import os
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, request, render_template, send_from_directory, Response
 from dotenv import load_dotenv
 from flask.helpers import url_for
+from . import db
 
 load_dotenv()
 app = Flask(__name__)
-
+app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+db.init_app(app)
 
 @app.route('/')
 def index():
@@ -27,3 +29,7 @@ def nandini():
 @app.route('/jose')
 def jose():
     return render_template('jose.html')
+
+@app.route('/health')
+def health():
+    return Response(status=200)
