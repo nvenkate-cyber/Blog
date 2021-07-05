@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, render_template, send_from_directory, Response
+from werkzeug.security import check_password_hash, generate_password_hash
 # from dotenv import load_dotenv
-from flask.helpers import url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -64,24 +64,19 @@ def register():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        db = get_db()
         error = None
 
         if not username:
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif db.execute(
-            'SELECT id FROM user WHERE username = ?', (username,)
-        ).fetchone() is not None:
+        elif UserModel.query.filter_by(username=username).first() is not None:
             error = f"User {username} is already registered."
-
+        
         if error is None:
-            db.execute(
-                'INSERT INTO user (username, password) VALUES (?, ?)',
-                (username, generate_password_hash(password))
-            )
-            db.commit()
+            new_user = UserModel(username, generate_password_hash(password))
+            db.session.add(new_user)
+            db.session.commit()
             return f"User {username} created successfully"
         else:
             return error, 418
@@ -94,19 +89,16 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        db = get_db()
         error = None
-        user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,)
-        ).fetchone()
+        user = UserModel.query.filter_by(username=username).first()
 
         if user is None:
             error = 'Incorrect username.'
-        elif not check_password_hash(user['password'], password):
+        elif not check_password_hash(user.password, password):
             error = 'Incorrect password.'
 
         if error is None:
-            return "Login Successful", 200 
+            return "Login Successful", 200
         else:
             return error, 418
     
