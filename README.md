@@ -9,10 +9,14 @@ Make sure you have python3 and pip installed
 
 
 Create and activate virtual environment using virtualenv
-```bash
-$ python -m venv python3-virtualenv
-$ source python3-virtualenv/bin/activate
-```
+
+1. Add `FLASK_ENV=development` to .env
+2. 
+    ```bash
+    $ docker-compose up
+    ```
+
+3. Access it at `http://127.0.0.1:5000`
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dependencies
 
