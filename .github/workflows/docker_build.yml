@@ -13,8 +13,9 @@ on:
 jobs:
   run-docker:
     name: Run Docker
+    runs-on: ubuntu-latest
 
-  steps:
+    steps:
     - name: Check out Git repository
       uses: actions/checkout@v2
       
