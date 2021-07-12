@@ -36,3 +36,11 @@ jobs:
 
             - name: Deployment message
               run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+
+            - name: Bash testing
+              uses: actions/checkout@v2
+              run: bash prod-test.sh
+
+            - name: Deploy fail?
+              if: ${{ failure() }}
+              run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
