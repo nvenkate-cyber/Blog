@@ -10,7 +10,7 @@ if curl -X POST -d "username=nand.v&password=1234" 'https://nandini.duckdns.org/
 else echo "error"
 fi
 
-if curl -X POST -d "username=nandini.v" 'https://nandini.duckdns.org/register' | grep -q 'Password is required'; then echo "success"
+if curl -X POST -d "username=nandini.v" 'https://nandini.duckdns.org/' | grep -q 'Password is required'; then echo "success"
 else echo "error"
 fi
 
