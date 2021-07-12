@@ -39,7 +39,6 @@ jobs:
 
             - name: Bash testing
               uses: actions/checkout@v2
-              run: bash prod-test.sh
 
             - name: Deploy fail?
               if: ${{ failure() }}
