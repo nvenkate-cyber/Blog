@@ -37,7 +37,7 @@ jobs:
             - name: Deployment message
               run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
 
-            - name: Bash testing
+            - name: Checkout files
               uses: actions/checkout@v2
            
             - name: Bash test
